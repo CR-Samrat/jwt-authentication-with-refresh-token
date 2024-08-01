@@ -73,7 +73,7 @@ public class SecurityConfig {
         return http
                     .csrf(csrf-> csrf.disable())
                     .authorizeHttpRequests(request -> request
-                                                        .requestMatchers("/products/welcome","/products/new","/products/authenticate").permitAll()
+                                                        .requestMatchers("/products/welcome","/products/new","/products/authenticate","/products/refreshToken").permitAll()
                                                         .requestMatchers("/products/**").authenticated())
                     .sessionManagement(session -> session
                                                     .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
